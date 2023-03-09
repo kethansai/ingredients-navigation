@@ -25,6 +25,7 @@ const IngredientsList = [
     name: "Broccoli",
     category: "Vegetable",
     description: `This is a wider card with supporting text below as a natural.`,
+    calories: 400,
     tags: ["Farm Product", "Vegetable", "Dairy Product", "Dairy Product"],
     image: `https://cdn.pixabay.com/photo/2016/03/05/19/02/broccoli-1238250_960_720.jpg`,
   },
@@ -32,6 +33,7 @@ const IngredientsList = [
     name: "Radish",
     category: "Vegetable",
     description: `This is a wider card with supporting text below as a natural.`,
+    calories: 450,
     tags: ["Farm Product"],
     image: `https://www.fluentu.com/blog/english/wp-content/uploads/sites/4/2020/02/vegetables-name-in-english-3.jpg`,
   },
@@ -39,6 +41,7 @@ const IngredientsList = [
     name: "Tomato",
     category: "Vegetable",
     description: `This is a wider card with supporting text below as a natural.`,
+    calories: 480,
     tags: ["Farm Product", "Vegetable", "Dairy Product", "Dairy Product"],
     image: `https://www.worldatlas.com/r/w500-q80/upload/c8/0e/5f/shutterstock-311521226.jpg`,
   },
@@ -46,6 +49,7 @@ const IngredientsList = [
     name: "Potato",
     category: "Vegetable",
     description: `This is a wider card with supporting text below as a natural.`,
+    calories: 420,
     tags: ["Farm Product"],
     image: `https://www.fluentu.com/blog/english/wp-content/uploads/sites/4/2020/02/vegetables-name-in-english-5.jpg`,
   },
@@ -55,6 +59,7 @@ const IngredientsList = [
     description: `This is a wider card with supporting text below as a natural
         lead-in to additional content. This content is a little bit
         longer.`,
+    calories: 400,
     tags: ["Farm Product", "Vegetable", "Dairy Product", "Dairy Product"],
     image: `https://www.fluentu.com/blog/english/wp-content/uploads/sites/4/2020/02/vegetables-name-in-english-7.jpg`,
   },
@@ -64,6 +69,7 @@ const IngredientsList = [
     description: `This is a wider card with supporting text below as a natural
         lead-in to additional content. This content is a little bit
         longer.`,
+    calories: 400,
     tags: ["Farm Product"],
     image: `https://www.fluentu.com/blog/english/wp-content/uploads/sites/4/2020/02/vegetables-name-in-english-9.jpg`,
   },
@@ -73,6 +79,7 @@ const IngredientsList = [
     description: `This is a wider card with supporting text below as a natural
         lead-in to additional content. This content is a little bit
         longer.`,
+    calories: 400,
     tags: ["Farm Product", "Vegetable", "Dairy Product", "Dairy Product"],
     image: `https://www.foodmanufacture.co.uk/var/wrbm_gb_food_pharma/storage/images/_aliases/wrbm_large/publications/food-beverage-nutrition/foodmanufacture.co.uk/article/2021/02/01/meat-trends-market-prospers-in-face-of-pandemic/12148503-4-eng-GB/Meat-trends-market-prospers-in-face-of-pandemic.jpg`,
   },
@@ -82,6 +89,7 @@ const IngredientsList = [
     description: `This is a wider card with supporting text below as a natural
         lead-in to additional content. This content is a little bit
         longer.`,
+    calories: 400,
     tags: ["Farm Product"],
     image: `https://img.freepik.com/premium-photo/chicken-meat-white-background_181303-1986.jpg`,
   },
@@ -114,7 +122,7 @@ const getIngredients = (ingredientsArr) => {
             <img
               src=${el.image}
               alt='photo'
-              height='250'
+              height='200'
               class='bd-placeholder-img card-img-top'
             />
             <div class='card-body'>
@@ -129,7 +137,7 @@ const getIngredients = (ingredientsArr) => {
               <button
                   type='button'
                   class='btn btn-sm fs-3 text-secondary'
-                  style='position:absolute; bottom:1%; right:45%'
+                  style='position:absolute; top:90%; left:45%'
                   data-bs-toggle='modal'
                   data-bs-target='#editModal${i}'
                   >
@@ -138,13 +146,17 @@ const getIngredients = (ingredientsArr) => {
             </div>
             <button
               type='button'
-              style='position:absolute; top:1%; right:1%'
+              style='position:absolute; top:1%; left:85%'
               class='btn btn-sm fs-3'
               data-bs-toggle='modal'
               data-bs-target='#deleteModal${i}'
               >
               <i class='fa-solid fa-trash text-danger'></i>
             </button>
+            <div class='text-center' style="position:absolute;border:1.5px solid black;width:38px;background-color:white;height:40px;border-radius:10px;top:1%;left:3%;">
+              <div class='fs-6 fw-bold' style='margin-bottom:-5px;'>${el.calories}</div>
+              <div class='fw-bold' style='font-size:8px'>Calories</div>
+            </div>
           </div>
           <!-- Delete Modal -->
           <div class="modal fade" id="deleteModal${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
